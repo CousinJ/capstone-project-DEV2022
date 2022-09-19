@@ -1,0 +1,35 @@
+.game-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(42, 50, 47);
+}
+
+.side-panel {
+    width: 35vw;
+    height: 100vh;
+    background-color: brown;
+}
+
+h2{
+    color:yellow;
+}
+
+.self-bar {
+    border-style: groove;
+    width: auto;
+    height: auto;
+    background-color: rgb(77, 19, 132);
+}
+
+.player-container {
+    width: auto;
+    height: 82vh;
+    border-style:double;
+
+}
+
+.player-bar {
+    border-style: groove;
+    width: auto;
+    height: 19.899vh;
+}

@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import io from "socket.io-client";
+
+import Landing from "./components/Landing";
+import Loading from "./components/Loading";
+import Game from "./components/Game/Game";
+
+import "./App.css";
+const socket = io.connect("http://localhost:3001");
 
 function App() {
+  const [view, setView] = useState("Landing");
+  const [gameData, setGameData] = useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {view === "Landing" && <Landing data={gameData} cb2={setGameData} view={view} cb={setView}></Landing>}
+      {view === "Loading" && <Loading data={gameData} cb2={setGameData} view={view} cb={setView}></Loading>}
+      {view === "Game" && <Game data={gameData} setData={setGameData}></Game>}
     </div>
   );
 }
