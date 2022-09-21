@@ -30,6 +30,7 @@ io.on("connection", (socket) => {
   socket.once("initialize-player", (arg) => {
     playerArray.push(arg);
     arg.id = playerArray.length
+    arg.role = Math.floor(Math.random() * 2)
 
     console.log(playerArray)
     

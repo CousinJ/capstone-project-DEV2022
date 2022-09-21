@@ -11,11 +11,12 @@ const socket = io.connect("http://localhost:3001");
 function App() {
   const [view, setView] = useState("Landing");
   const [gameData, setGameData] = useState('')
+ 
 
   return (
     <div className="App">
       {view === "Landing" && <Landing data={gameData} cb2={setGameData} view={view} cb={setView}></Landing>}
-      {view === "Loading" && <Loading data={gameData} cb2={setGameData} view={view} cb={setView}></Loading>}
+      {view === "Loading" && <Loading  data={gameData} cb2={setGameData} view={view} cb={setView}></Loading>}
       {view === "Game" && <Game data={gameData} setData={setGameData}></Game>}
     </div>
   );

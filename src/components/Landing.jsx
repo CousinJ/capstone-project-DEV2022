@@ -18,7 +18,7 @@ function Landing(props) {
   const textHandler = (e) => {
     const result = e.target.value.replace(/[^a-z]/gi, "");
     setText(result);
-    setPlayerObject({ player: result, room: number, id: null });
+    setPlayerObject({ player: result, room: number, id: null, role: null});
    
     
   };
