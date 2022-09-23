@@ -1,0 +1,40 @@
+.vote-main {
+ width: 100vh;
+ height: 30vw;
+ background-color: aqua;
+ position: relative
+;
+left: 40vw;
+bottom: 70vh;
+
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+
+
+
+
+}
+
+.title {
+    color: black
+}
+
+
+.others-bar {
+   
+    width: auto;
+    height: 80px;
+    background-color: rgb(129, 128, 131);
+    margin-top: 10px; 
+    display: flex;
+    flex-direction: row;
+}
+
+
+.box {
+    width: 9vw;
+    height: auto;
+    border-style:outset;
+    margin: 5px;
+}

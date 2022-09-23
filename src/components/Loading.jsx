@@ -5,8 +5,7 @@ const socket = io.connect("http://localhost:3001");
 
 function Loading(props) {
     
-   const [instance, setInstance] =useState('')
-    
+   
    
 
         socket.on('start-game', (arg) => {
@@ -14,16 +13,16 @@ function Loading(props) {
             
              for(let i = 0; i < arg.length; i++) {
                 if(arg[i].player === props.data.player) {
-                    props.cb2({ player: arg[i].player, room: arg[i].room, id: arg[i].id, role: arg[i].role})
+                    props.cb2({ player: arg[i].player, room: arg[i].room, id: arg[i].id, role: arg[i].role, turn: arg[i].turn, playing: arg[i].playing})
                 } 
              }
 
-             setInstance(arg)
+             props.setInstance(arg)
              
                 
                
                 
-                if(arg.length > 4) {
+                if(arg.length > 0) {
                 
                 props.cb('Game')
                 

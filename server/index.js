@@ -31,6 +31,12 @@ io.on("connection", (socket) => {
     playerArray.push(arg);
     arg.id = playerArray.length
     arg.role = Math.floor(Math.random() * 2)
+    arg.turn = false
+    arg.playing = false
+    if(playerArray.length === 1) {
+        arg.turn = true
+        arg.playing = true
+    }
 
     console.log(playerArray)
     
@@ -40,6 +46,14 @@ io.on("connection", (socket) => {
     ;
   });
 
+
+socket.on('sending-prophecy', (arg) => {console.log(arg)
+io.emit('r-prophecy', arg)
+})
+
+socket.on('switch-play', () => {playerArray.forEach((el) => {el.playing = !el.playing}); console.log(playerArray)
+      io.emit('turnt', playerArray)
+})
 
 });
 
