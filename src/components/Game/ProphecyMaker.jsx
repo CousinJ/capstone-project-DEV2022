@@ -1,4 +1,5 @@
 import React, {useState} from 'react' 
+import './ProphecyMaker.css'
 import io from "socket.io-client";
 const socket = io.connect("http://localhost:3001");
 
@@ -19,7 +20,7 @@ const sendProphecy = () => {
         <div   style={{ backgroundRepeat: 'no-repeat', backgroundImage: `url(${props.three.three})`}} className='proph-slot'></div>
         
      <button onClick={sendProphecy} className='submit-proph'>submit</button>
-     <button></button>
+     
          </div>)
 }
 

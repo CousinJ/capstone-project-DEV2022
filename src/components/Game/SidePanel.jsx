@@ -36,10 +36,20 @@ function SidePanel(props) {
 
     return( <div className='side-panel'>
         <div className='self-bar'>
-        <h2>{props.data.player}</h2>
+            <div className='name-box'>
+            <h1>{props.data.player}</h1>
+            </div>
+        
         <h3>Player {props.data.id}</h3>
+        <div className='character-info'>
+            {props.data.house} 
+            {props.data.skill}
+            {props.data.weapon}
+
+        </div>
+
         <h3>{roleText}</h3>
-        <h1>{turnText}</h1>
+        <h2>{turnText}</h2>
         
         </div>
 

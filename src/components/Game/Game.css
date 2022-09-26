@@ -17,14 +17,22 @@
 }
 
 h2{
-    color:yellow;
+    color:darkgoldenrod
 }
 
 .self-bar {
     border-style: groove;
     width: auto;
     height: auto;
-    background-color: rgb(100, 97, 103);
+    background: url('../../assets/backgrounds/medivial-background-1_adobe_express.svg');
+    
+    background-size: cover;
+    
+    border-style: groove;
+   
+  
+    
+    
 }
 
 
@@ -41,7 +49,7 @@ h2{
 .player-box {
     width: auto;
     height: auto;
-    background-color: aquamarine
+    background-color: rgb(24, 138, 100)
 
 }
 
@@ -53,12 +61,13 @@ h2{
 
 
 .card-main {
-    background-color: rgb(82, 100, 118);
+    background-color:  rgb(32, 22, 53);
     width: 60vw;
-    height: 40vh;
+    height: 20vh;
     margin-left: 25px;
     margin-top: 25px;
     border-style: outset;
+    border-color: darkgoldenrod;
     border-width: 3px;
     display: flex;
     flex-direction: row;
@@ -88,12 +97,13 @@ h2{
 }
 
 .prophecy-main {
-    background-color: rgb(93, 93, 129);
+    background-color:  rgb(32, 22, 53);
     width: 27vw;
     height: 100px;
     position: relative;
     left: 50vw;
-
+    border-color: darkgoldenrod;
+    border-right: 3px;
     bottom: 35%;
     border-style: outset;
     display: flex;
@@ -101,15 +111,7 @@ h2{
  
 }
 
-.submit-proph{
 
-
-    height: 100px;
-    
-    
-  
-    
-}
 
 
 
@@ -117,6 +119,7 @@ h2{
 width: 15vw;
 height:inherit;
 border-style: outset;
+border-color: darkgoldenrod;
 margin: auto
 }
 
@@ -127,4 +130,19 @@ margin: auto
     border-style: outset;
     display: flex;
     
+}
+
+.character-info {
+    color:rgb(14, 2, 4);
+    text-decoration: overline;
+}
+
+.name-box {
+ border-style: ridge;
+ border-width: 5px;
+ border-color: darkgoldenrod;
+ background-color: rgb(21, 26, 31);
+ width: fit-content;
+ color: darkgoldenrod;
+ margin: auto;
 }

@@ -1,3 +1,7 @@
+const weapons = require("./character_data/weapons.js")
+const skills = require("./character_data/skills.js")
+const houses = require("./character_data/houses.js")
+
 const express = require("express");
 
 const cors = require("cors");
@@ -20,11 +24,16 @@ const io = new Server(server, {
   },
 });
 
+//assets  ====  character details
+
+
+
 let playerArray = [];
 let votedArray = [];
 
 io.on("connection", (socket) => {
   console.log(socket.id);
+ 
   
  
 
@@ -34,6 +43,11 @@ io.on("connection", (socket) => {
     arg.role = Math.floor(Math.random() * 2)
     arg.turn = false
     arg.playing = false
+    //character data from server data module exports
+    arg.house = houses[Math.floor(Math.random() * 5)].houseName
+    arg.weapon = weapons[Math.floor(Math.random() * 5)].weaponName
+    arg.skill = skills[Math.floor(Math.random() * 5)].skillName
+    
     if(playerArray.length === 1) {
         arg.turn = true
         arg.playing = true
@@ -56,7 +70,7 @@ socket.on('switch-play', () => {playerArray.forEach((el) => {el.playing = !el.pl
       io.emit('turnt', playerArray)
 })
 
-
+//ENTERING VOTING AREA
 socket.on('vote-out', (arg) => {
  
  
@@ -101,9 +115,10 @@ let counter = []
         io.emit('turnt', playerArray)
         io.emit('vote-final', voteObject[el])
        votedArray = []
+
       }
     }
-  }
+  } // LEAVING VOTING AREA
  
 })
 

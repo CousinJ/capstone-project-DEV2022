@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Game.css";
+
+//components
 import SidePanel from "./SidePanel";
 import CardFountain from "./CardFountain";
 import ProphecyMaker from "./ProphecyMaker";
 import ProphecyDisplay from "./ProphecyDisplay";
 import Voter from "./voting/Voter";
 import Result from "./voting/Result";
-
+//assets  ====  omens
 import arcane from "../../assets/arcane_adobe_express.svg";
 import sword from "../../assets/sword-heart_adobe_express.svg";
 import sun from "../../assets/sun_adobe_express.svg";
@@ -17,9 +19,10 @@ import prosperity from "../../assets/prosperity_adobe_express.svg";
 import stag from "../../assets/white-stag_adobe_express.svg";
 import serpent from "../../assets/serpent_adobe_express.svg";
 
+//socket.io
 import io from "socket.io-client";
 const socket = io.connect("http://localhost:3001");
-
+//===============================================================================
 function Game(props) {
   const [playing, setPlaying] = useState(props.data.playing);
 
