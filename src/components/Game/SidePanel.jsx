@@ -16,10 +16,12 @@ function SidePanel(props) {
     if(props.playing) {
         turnText = 'it is your turn'
     }
-    if(!props.playing) {
+    if(props.playing === false) {
         turnText = 'NOT YOUR TURN'
     }
-   
+   if(props.playing === 'voted') {
+    turnText = 'awaiting player  votes...'
+   }
     
     const playerGallery = props.instance.map((el) => {
         

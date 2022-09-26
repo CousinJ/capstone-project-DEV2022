@@ -1,13 +1,25 @@
 import React from 'react'
 import './Voter.css' 
 
+
+import io from 'socket.io-client'
+const socket = io.connect("http://localhost:3001");
+
+
+
 function Voter(props) {
+
+    
+
+
+
     const players = props.instance.map((el, i) => {return(<div key={i} className='others-bar'>
         <div className='box'><h4>{el.player}</h4></div>
-        <div className='box'></div>
-        <div className='box'></div>
-        <div className='box'></div>
-        <div className='box'></div>
+       <button onClick={() => {
+        
+            socket.emit('vote-out', el)
+        
+        }}>vote {el.player}</button>
     </div>)})
     return(<div className='vote-main'>
       
