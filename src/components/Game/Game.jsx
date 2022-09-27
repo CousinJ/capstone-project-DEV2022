@@ -34,6 +34,9 @@ function Game(props) {
 
 //this function is to close the result component.
   const okHandler = () => {
+    if(playerVotedOut === 'You') {
+      props.setView('Exit')
+    }
     setShowingResult(false)
   }
 
@@ -85,7 +88,7 @@ function Game(props) {
       )}
 
       {props.data.turn === false && <ProphecyDisplay></ProphecyDisplay>}
-      {props.data.turn === false && <Voter instance={props.instance}></Voter>}
+      {props.data.turn === false && <Voter data={props.data} instance={props.instance}></Voter>}
     </div>
   );
 }

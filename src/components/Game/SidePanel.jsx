@@ -24,14 +24,18 @@ function SidePanel(props) {
    }
     
     const playerGallery = props.instance.map((el) => {
-        
-        if(el.role === 1) {
-             color = 'purple'
+        if(props.data.turn) {
+            if(el.role === 1) {
+                color = 'purple'
+           }
+           if(el.role === 0 ) {
+                color = 'white'
+           }
+   
+        } else {
+            color = 'white'
         }
-        if(el.role === 0 ) {
-             color = 'white'
-        }
-
+       
         return(<div style={{color: color}} className='player-box'>{el.id}.{el.player}</div>)})
 
     return( <div className='side-panel'>

@@ -5,7 +5,9 @@ const socket = io.connect("http://localhost:3001");
 
 
 function ProphecyMaker(props) {
+    
 const sendProphecy = () => {
+   //ERROR AND PREVENT HERE with props.playing
    
     socket.emit('sending-prophecy', props.three )
     //first change in who is playing the game. set all other players to true at this time. It will change back to player 1s turn when the list of all their votes are equal to all the players.length - 1.

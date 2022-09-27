@@ -60,7 +60,14 @@ io.on("connection", (socket) => {
 
     ;
   });
+socket.on('exiting', (arg) => {
+    playerArray.forEach((el, i) => {if(el.id === arg.id) {
+      playerArray.splice(i , 1)
+      console.log(playerArray)
+      io.emit('reset-instance', playerArray)
+    }})
 
+})
 
 socket.on('sending-prophecy', (arg) => {console.log(arg)
 io.emit('r-prophecy', arg)
