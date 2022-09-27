@@ -1,0 +1,33 @@
+.player-box {
+    display: flex;
+    flex-direction: row;
+    border-style: groove;
+}
+
+.player-name-sq {
+    border-right: 3px;
+    width: 25%;
+    height: 80px;
+    border-style: solid ;
+
+}
+
+.player-house-sq {
+    width: 25%;
+    height: auto;
+    border-style: solid ;
+
+}
+
+.player-skill-sq {
+    width: 25%;
+    border-style: solid ;
+
+    height: auto;
+}
+
+.player-weapon-sq {
+    width: 25%;
+    height: auto;
+    border-style: solid ;
+}

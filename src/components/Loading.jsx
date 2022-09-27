@@ -3,8 +3,17 @@ import io from "socket.io-client";
 const socket = io.connect("http://localhost:3001");
 
 function Loading(props) {
+
+
+
+
   socket.on("start-game", (arg) => {
+
     for (let i = 0; i < arg.length; i++) {
+      if(arg[i].house === 'Torren') {
+        
+      }
+
       if (arg[i].player === props.data.player) {
         props.cb2({
           player: arg[i].player,
@@ -14,14 +23,14 @@ function Loading(props) {
           turn: arg[i].turn,
           playing: arg[i].playing,
           weapon: arg[i].weapon,
-          house: arg[i].house,
+          houseName: arg[i].house,
           skill: arg[i].skill
         });
       }
     }
 
     props.setInstance(arg);
-
+//THIS DETERMINES HOW MANY PLAYERS UNTIL THE GAME STARTS 
     if (arg.length > 0) {
       props.cb("Game");
     }
